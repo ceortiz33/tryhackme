@@ -43,3 +43,19 @@ Inspecting with the URL in port 80 we can see the main page of the Wordpress sit
 Also there is a comment from **Sr Hott** but no more information related to the machine.
 
 ![](images/comment.png)
+
+The admin panel is in `<ip-address>/wp-admin`. We can try to brute force the password with the users we got from the previous scan. For this task we can use hydra or Wpscan.
+Wpscan also have an option to brute force the admin panel so we will stick with it.
+
+`wpscan --url <ip-address> --usernames c0ldd --passwords /usr/share/wordlists/rockyou.txt`
+
+![](images/wpscred.png)
+
+The user **c0ldd** uses a common and insecure password, with this credentials now we can access to the admin panel.
+
+![](images/dashboard.png)
+
+
+
+
+
