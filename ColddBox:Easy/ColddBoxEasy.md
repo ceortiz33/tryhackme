@@ -55,6 +55,12 @@ The user **c0ldd** uses a common and insecure password, with this credentials no
 
 ![](images/dashboard.png)
 
+Wordpress uses PHP files with that in mind, we can setup a PHP reverse shell. The first step is to look for Appearence tab then click Editor and finally select 404.php Template.
+Here we can modify the content of 404.php file and replace it with the reverse shell. 
+
+We can copy the php-reverse-shell.php from https://raw.githubusercontent.com/pentestmonkey/php-reverse-shell/master/php-reverse-shell.php. Don't forget to modify the **IP** and **port** before saving the file.
+
+![](images/revshell.png)
 
 
 
