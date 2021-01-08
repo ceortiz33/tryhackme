@@ -30,9 +30,16 @@ No backups files were found during the scan.
 
 ![](images/wpscan3.png)
 
-Wordpress also has an option to enumerate users, we can try to dump some information related to users using `wpscan --url <ip-address> --enumerate u`
+Wordpress also has an option to enumerate users, we can try to dump some information related to users using 
+
+`wpscan --url <ip-address> --enumerate u`
 
 ![](images/users.png)
 
+Inspecting with the URL in port 80 we can see the main page of the Wordpress site. Here we can verify that user **c0ldd** exists.
 
+![](images/main_page.png)
 
+Also there is a comment from **Sr Hott** but no more information related to the machine.
+
+![](images/comment.png)
