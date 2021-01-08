@@ -21,3 +21,5 @@ This options enumerate all the information available in the box.
 `wpscan --url http://<ip/address>`
 
 ![](images/wpscan1.png)
+
+![](images/wpscan2.png)
