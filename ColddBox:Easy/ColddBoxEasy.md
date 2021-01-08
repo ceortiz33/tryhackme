@@ -60,7 +60,7 @@ Here we can modify the content of 404.php file and replace it with the reverse s
 
 We can copy the php-reverse-shell.php from https://raw.githubusercontent.com/pentestmonkey/php-reverse-shell/master/php-reverse-shell.php. Don't forget to modify the **IP** and **port** before saving the file.
 
-![](images/revshell.png)
+![](images/revshell1.png)
 
 
 
