@@ -22,4 +22,12 @@ This options enumerate all the information available in the box.
 
 ![](images/wpscan1.png)
 
+No plugins were found, but we got an outdated theme that maybe could be exploitable. Making a search in Google looks like this theme is vulnerable to DOM-based XSS https://blog.sucuri.net/2015/05/jetpack-and-twentyfifteen-vulnerable-to-dom-based-xss.html However requires some social engeneering and could be hard to exploit.
+
 ![](images/wpscan2.png)
+
+No backups files were found during the scan.
+
+![](images/wpscan3.png)
+
+
