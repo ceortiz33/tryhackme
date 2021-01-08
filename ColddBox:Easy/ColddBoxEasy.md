@@ -14,4 +14,10 @@ Looks like port 80 and port 4512 are opened so with this information now we can 
 
 ![](images/nmap2.png)
 
+Port 80 is running Wordpress so we can run wpscan to get more information about the server
 
+This options enumerate all the information available in the box.
+
+`wpscan --url http://<ip/address>`
+
+![](images/wpscan1.png)
