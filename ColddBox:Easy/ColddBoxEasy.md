@@ -30,4 +30,9 @@ No backups files were found during the scan.
 
 ![](images/wpscan3.png)
 
+Wordpress also has an option to enumerate users, we can try to dump some information related to users using `wpscan --url <ip-address> --enumerate u`
+
+![](images/users.png)
+
+
 
