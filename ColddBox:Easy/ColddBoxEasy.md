@@ -1,7 +1,7 @@
 # ColddBoxEasy TryHackme Walkthrough
 
 <p align="center">
-  <img width="600" height="200" src="https://www.python.org/python-.png">
+  <img width="300" height="300" src="https://github.com/ceortiz33/tryhackme/blob/main/ColddBox:Easy/images/Colddbox.png">
 </p>
 
 As usual we start with nmap to identify the open ports of the machine
