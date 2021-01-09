@@ -12,6 +12,13 @@ We can use this command to accelerate the results of nmap scan.
 
 ![](images/nmap1.png)
 
+<p align="center">
+  <img width="886" height="274" src="https://github.com/ceortiz33/tryhackme/blob/main/ColddBox:Easy/images/nmap1.png">
+</p>
+
+
+
+
 Looks like port 80 and port 4512 are opened so with this information now we can proceed to scan the services running in these ports
 
 ![](images/nmap2.png)
