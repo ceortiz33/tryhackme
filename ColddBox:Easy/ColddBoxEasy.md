@@ -10,8 +10,6 @@ We can use this command to accelerate the results of nmap scan.
 
 `nmap  -p- -T5 -n -Pn --open --min rate 5000 -vvv <ip-address>`
 
-![](images/nmap1.png)
-
 <p align="center">
   <img width="886" height="274" src="https://github.com/ceortiz33/tryhackme/blob/main/ColddBox:Easy/images/nmap1.png">
 </p>
