@@ -99,4 +99,4 @@ We can use `sudo -l` to know which commands can be run with root privileges.
 
 ![](images/privesc.png)
 
-We will use vim to escalate privileges to root. Lets look ![GTFObins](https://gtfobins.github.io/gtfobins/vim/) for the command vim.
+We will use vim to escalate privileges to root. Lets look [GTFObins](https://gtfobins.github.io/gtfobins/vim/) for the command vim.
