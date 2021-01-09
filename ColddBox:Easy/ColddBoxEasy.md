@@ -1,10 +1,12 @@
 # ColddBoxEasy TryHackme Walkthrough
 
-![]/images/bakcground.PNG
+<p align="center">
+  <img width="600" height="200" src="https://www.python.org/python-.png">
+</p>
 
-As usual we start with nmap to know the open ports of the machine
+As usual we start with nmap to identify the open ports of the machine
 
-We can use this command to accelerate the results of nmap scan
+We can use this command to accelerate the results of nmap scan.
 
 `nmap  -p- -T5 -n -Pn --open --min rate 5000 -vvv <ip-address>`
 
@@ -14,7 +16,7 @@ Looks like port 80 and port 4512 are opened so with this information now we can 
 
 ![](images/nmap2.png)
 
-Port 80 is running Wordpress so we can run wpscan to get more information about the server
+Port 80 is running Wordpress, we can use **wpscan** to get more information about the server
 
 This options enumerate all the information available in the box.
 
@@ -55,7 +57,7 @@ The user **c0ldd** uses a common and insecure password, with this credentials no
 
 ![](images/dashboard.png)
 
-Wordpress uses PHP files with that in mind, we can setup a PHP reverse shell. The first step is to look for Appearence tab then click Editor and finally select 404.php Template.
+Wordpress uses PHP files with that in mind we can think about deploying a PHP reverse shell. The first step is to look for **Appearence** tab then click **Editor** and finally select **404.php Template**.
 Here we can modify the content of 404.php file and replace it with the reverse shell. 
 
 We can copy the php-reverse-shell.php from https://raw.githubusercontent.com/pentestmonkey/php-reverse-shell/master/php-reverse-shell.php. Don't forget to modify the **IP** and **port** before saving the file.
@@ -87,7 +89,7 @@ In order to obtain this flag we must sign in as user **c0ldd**. Looking in Googl
 
 ![](images/wp-config.png)
 
-Here we obtain a password, that maybe will escalate privileges in order to login as user c0ldd due to password reuse.
+Here we obtain a password that could work to login as user c0ldd due to password reuse.
 
 ![](images/c0lddpass.png)
 
@@ -95,7 +97,7 @@ We successfully login as user **c0ldd** and now we can read the content of the *
 
 `user.txt   R*************************************************==`
 
-We can use `sudo -l` to know which commands can be run with root privileges.
+Use `sudo -l` command to identify which commands can be run with root privileges.
 
 ![](images/privesc.png)
 
