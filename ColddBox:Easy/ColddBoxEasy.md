@@ -83,7 +83,20 @@ user.txt flag is in /home/c0ldd directory but we don't have permissions as user 
 
 ![](images/failuser.png)
 
+In order to obtain this flag we must sign in as user **c0ldd**. Looking in Google, https://serverpilot.io/docs/where-to-find-your-database-credentials-in-wordpress/ says that Wordpress credentials are stored in the file **wp-config.php**. This file is located in /var/www/html in our machine.
 
+![](images/wp-config.png)
 
+Here we obtain a password, that maybe will escalate privileges in order to login as user c0ldd due to password reuse.
 
+![](images/c0lddpass.png)
 
+We successfully login as user **c0ldd** and now we can read the content of the **user.txt** file. The flag is base64 encoded but in the hint says that the flag is actually the encoded flag.
+
+`user.txt   R*************************************************==`
+
+We can use `sudo -l` to know which commands can be run with root privileges.
+
+![](images/privesc.png)
+
+We will use vim to escalate privileges to root. Lets look ![GTFObins](https://gtfobins.github.io/gtfobins/vim/) for the command vim.
