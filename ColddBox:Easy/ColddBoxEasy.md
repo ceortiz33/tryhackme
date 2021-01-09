@@ -10,12 +10,7 @@ We can use this command to accelerate the results of nmap scan.
 
 `nmap  -p- -T5 -n -Pn --open --min rate 5000 -vvv <ip-address>`
 
-<p align="center">
-  <img width="886" height="274" src="https://github.com/ceortiz33/tryhackme/blob/main/ColddBox:Easy/images/nmap1.png">
-</p>
-
-
-
+![](images/nmap1.png)
 
 Looks like port 80 and port 4512 are opened so with this information now we can proceed to scan the services running in these ports
 
