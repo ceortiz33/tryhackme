@@ -44,15 +44,21 @@ root@kali:/home/kali# testv4er9ll1!ss
 
 ### 1. What is the name of the cookie used for authentication?
 
-`aut***`
+```
+aut***
+```
 
 ### 2. If you decode the cookie, what is the value of the fixed part of the cookie?**
 
-`v4*******ss`
+```
+v4*******ss
+```
 
 ### 3. After accessing his account, what did the user mcinventory request?**
 
-`fi****ll`
+```
+fi****ll
+```
 
 ## Day 2 - Artic Forum <a name="day2"></a>
 
