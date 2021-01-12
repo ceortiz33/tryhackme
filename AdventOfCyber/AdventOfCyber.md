@@ -40,9 +40,19 @@ Let's create an account and login, now we can see a cookie of value `dGVzdHY0ZXI
 root@kali:/home/kali# echo "dGVzdHY0ZXI5bGwxIXNz" | base64 -d
 root@kali:/home/kali# testv4er9ll1!ss
 ```
-  
+![](images/day1_2.png)  
 
+**1. What is the name of the cookie used for authentication?**
 
+`aut***`
+
+**2. If you decode the cookie, what is the value of the fixed part of the cookie?**
+
+`v4*******ss`
+
+**3. After accessing his account, what did the user mcinventory request?**
+
+`fi****ll`
 
 ## Day 2 - Artic Forum <a name="day2"></a>
 
