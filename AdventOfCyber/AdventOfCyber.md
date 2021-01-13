@@ -122,6 +122,24 @@ Ingresamos con estas credenciales en el panel de administracion y logramos ingre
 
 Si revisamos un poco el contenido de la pagina vemos que mas abajo hay una entrada de un foro que muestra la tercera respuesta del reto del dia de hoy.
 
+1. What is the path of the hidden page?
+
+```
+/sys*****
+```
+
+2. What is the password you found?
+
+```
+de*******ss
+```
+
+3. What do you have to take to the 'partay'?
+
+```
+E****g
+```
+
 ## Day 3 - Evil Elf <a name="day3"></a>
 
 ## Day 4 - Training <a name="day4"></a>
