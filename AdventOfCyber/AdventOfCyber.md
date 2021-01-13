@@ -122,25 +122,78 @@ Ingresamos con estas credenciales en el panel de administracion y logramos ingre
 
 Si revisamos un poco el contenido de la pagina vemos que mas abajo hay una entrada de un foro que muestra la tercera respuesta del reto del dia de hoy.
 
-1. What is the path of the hidden page?
+### 1. What is the path of the hidden page?
 
 ```
 /sys*****
 ```
 
-2. What is the password you found?
+### 2. What is the password you found?
 
 ```
 de*******ss
 ```
 
-3. What do you have to take to the 'partay'?
+### 3. What do you have to take to the 'partay'?
 
 ```
 E****g
 ```
 
 ## Day 3 - Evil Elf <a name="day3"></a>
+
+```
+# sudo tshark -r 'Evil Elf.pcap' -Y "frame.number==998"
+998   1.867761 10.10.186.136 → 63.**.**.195 TCP 74 39390 → 23 [SYN] Seq=0 Win=26883 Len=0 MSS=8961 SACK_PERM=1 TSval=2930534971 TSecr=0 WS=128
+```
+
+```
+for stream in `tshark -r 'Evil Elf.pcap' -T fields -e tcp.stream -Y "frame.number==998" | sort -n -u`; do echo Stream: $stream; tshark -r 'Evil Elf.pcap' -q -z follow,tcp,ascii,$stream; done
+
+Follow: tcp,ascii
+Filter: tcp.stream eq 1
+Node 0: 10.10.186.136:39390
+Node 1: 63.32.89.195:23
+32
+echo 'ps4' > christmas_list.txt
+
+16
+cat /etc/shadow
+
+        956
+root:*:18171:0:99999:7:::
+daemon:*:18171:0:99999:7:::
+bin:*:18171:0:99999:7:::
+sys:*:18171:0:99999:7:::
+sync:*:18171:0:99999:7:::
+games:*:18171:0:99999:7:::
+man:*:18171:0:99999:7:::
+lp:*:18171:0:99999:7:::
+mail:*:18171:0:99999:7:::
+news:*:18171:0:99999:7:::
+uucp:*:18171:0:99999:7:::
+proxy:*:18171:0:99999:7:::
+www-data:*:18171:0:99999:7:::
+backup:*:18171:0:99999:7:::
+list:*:18171:0:99999:7:::
+irc:*:18171:0:99999:7:::
+gnats:*:18171:0:99999:7:::
+nobody:*:18171:0:99999:7:::
+systemd-network:*:18171:0:99999:7:::
+systemd-resolve:*:18171:0:99999:7:::
+syslog:*:18171:0:99999:7:::
+messagebus:*:18171:0:99999:7:::
+_apt:*:18171:0:99999:7:::
+lxd:*:18171:0:99999:7:::
+uuidd:*:18171:0:99999:7:::
+dnsmasq:*:18171:0:99999:7:::
+landscape:*:18171:0:99999:7:::
+sshd:*:18171:0:99999:7:::
+pollinate:*:18171:0:99999:7:::
+ubuntu:!:18232:0:99999:7:::
+buddy:$6$3GvJsNPG$ZrSFprHS13divBhlaKg1rYrYLJ7m1xsYRKxlLh0A1sUc/6SUd7UvekBOtSnSyBwk3vCDqBhrgxQpkdsNN6aYP1:18233:0:99999:7:::
+```
+
 
 ## Day 4 - Training <a name="day4"></a>
 
