@@ -106,6 +106,12 @@ by OJ Reeves (@TheColonial) & Christian Mehlmauer (@_FireFart_)
 /sys***** (Status: 200)
 ```
 
+![](images/day2_2.png)
+
+![](images/day2_3.png)
+
+![](images/day2_4.png)
+
 ## Day 3 - Evil Elf <a name="day3"></a>
 
 ## Day 4 - Training <a name="day4"></a>
