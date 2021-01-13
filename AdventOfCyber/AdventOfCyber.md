@@ -204,6 +204,24 @@ https://hashcat.net/wiki/doku.php?id=example_hashes   encontramos el patron corr
 $6$3GvJsNPG$ZrSFprHS13divBhlaKg1rYrYLJ7m1xsYRKxlLh0A1sUc/6SUd7UvekBOtSnSyBwk3vCDqBhrgxQpkdsNN6aYP1:r*****w
 ```
 
+### 1. Whats the destination IP on packet number 998?
+
+```
+63.**.**.195
+```
+
+### 2. What item is on the Christmas list?
+
+```
+p**
+```
+
+### 3. Crack buddy's password!
+
+```
+r*****w
+```
+
 ## Day 4 - Training <a name="day4"></a>
 
 ## Day 5 - Ho-Ho-Hosint <a name="day5"></a>
