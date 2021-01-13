@@ -77,6 +77,35 @@ fi****ll
 
 ## Day 2 - Artic Forum <a name="day2"></a>
 
+![](images/day2_1.png)
+
+```
+root@kali:/home/kali# gobuster dir -u http://10.10.83.219:3000/ -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt 
+===============================================================
+Gobuster v3.0.1
+by OJ Reeves (@TheColonial) & Christian Mehlmauer (@_FireFart_)
+===============================================================
+[+] Url:            http://10.10.83.219:3000/
+[+] Threads:        10
+[+] Wordlist:       /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt
+[+] Status codes:   200,204,301,302,307,401,403
+[+] User Agent:     gobuster/3.0.1
+[+] Timeout:        10s
+===============================================================
+2021/01/13 11:34:36 Starting gobuster
+===============================================================
+/home (Status: 302)
+/login (Status: 200)
+/admin (Status: 302)
+/Home (Status: 302)
+/assets (Status: 301)
+/css (Status: 301)
+/Login (Status: 200)
+/js (Status: 301)
+/logout (Status: 302)
+/sys***** (Status: 200)
+```
+
 ## Day 3 - Evil Elf <a name="day3"></a>
 
 ## Day 4 - Training <a name="day4"></a>
