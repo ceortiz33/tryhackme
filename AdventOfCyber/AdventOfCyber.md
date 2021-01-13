@@ -79,6 +79,8 @@ fi****ll
 
 ![](images/day2_1.png)
 
+El reto de hoy consiste en analizar un foro en donde aprenderemos algo acerca de bruteforcing directories para encontrar directorios conocidos dentro de un sitio web, para este proposito se utilizara gobuster. Esta herramienta permite hacer fuzzing de directorios mediante un ataque con diccionario, mostrar las coincidencias y muestra el status indicando si son accesibles o no por el usuario final.
+
 ```
 root@kali:/home/kali# gobuster dir -u http://10.10.83.219:3000/ -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt 
 ===============================================================
@@ -106,11 +108,19 @@ by OJ Reeves (@TheColonial) & Christian Mehlmauer (@_FireFart_)
 /sys***** (Status: 200)
 ```
 
+Al finalizar de ejecutar la herramienta descubrimos el directorio sys***** que es la respuesta a la primera pregunta de este dia. Una vez que ingresamos aparece una ventana de login de administracion, sin embargo no conocemos las credenciales. Indagando mayor informacion en el codigo fuente de esta pagina encontramos un comentario que parece de utilidad indicando que el sitio ha sido creado basandose en un repositorio en Github
+
 ![](images/day2_2.png)
+
+Realizando la busqueda en Google encontramos que existe el repositorio Artic Digital Design y que ademas tiene credenciales por defecto.
 
 ![](images/day2_3.png)
 
+Ingresamos con estas credenciales en el panel de administracion y logramos ingresar satisfactoriamente. La contrasena utilizada es la respuesta de la segunda pregunta.
+
 ![](images/day2_4.png)
+
+Si revisamos un poco el contenido de la pagina vemos que mas abajo hay una entrada de un foro que muestra la tercera respuesta del reto del dia de hoy.
 
 ## Day 3 - Evil Elf <a name="day3"></a>
 
