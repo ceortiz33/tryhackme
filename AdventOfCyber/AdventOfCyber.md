@@ -147,6 +147,9 @@ E****g
 998   1.867761 10.10.186.136 → 63.**.**.195 TCP 74 39390 → 23 [SYN] Seq=0 Win=26883 Len=0 MSS=8961 SACK_PERM=1 TSval=2930534971 TSecr=0 WS=128
 ```
 
+https://osqa-ask.wireshark.org/questions/14811/follow-tcp-stream-with-tshark-still-can-not-in-batch-mode
+
+
 ```
 for stream in `tshark -r 'Evil Elf.pcap' -T fields -e tcp.stream -Y "frame.number==998" | sort -n -u`; do echo Stream: $stream; tshark -r 'Evil Elf.pcap' -q -z follow,tcp,ascii,$stream; done
 
@@ -155,7 +158,7 @@ Filter: tcp.stream eq 1
 Node 0: 10.10.186.136:39390
 Node 1: 63.32.89.195:23
 32
-echo 'ps4' > christmas_list.txt
+echo '***' > christmas_list.txt
 
 16
 cat /etc/shadow
@@ -194,6 +197,12 @@ ubuntu:!:18232:0:99999:7:::
 buddy:$6$3GvJsNPG$ZrSFprHS13divBhlaKg1rYrYLJ7m1xsYRKxlLh0A1sUc/6SUd7UvekBOtSnSyBwk3vCDqBhrgxQpkdsNN6aYP1:18233:0:99999:7:::
 ```
 
+https://hashcat.net/wiki/doku.php?id=example_hashes   encontramos el patron correspondiente a $6$ y este corresponde a sha512crypt en hashcat con la opcion -m 1800
+
+```
+# hashcat -m 1800 task3.txt /usr/share/wordlists/rockyou.txt --show
+$6$3GvJsNPG$ZrSFprHS13divBhlaKg1rYrYLJ7m1xsYRKxlLh0A1sUc/6SUd7UvekBOtSnSyBwk3vCDqBhrgxQpkdsNN6aYP1:r*****w
+```
 
 ## Day 4 - Training <a name="day4"></a>
 
