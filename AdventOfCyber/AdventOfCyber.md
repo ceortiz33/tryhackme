@@ -52,6 +52,10 @@ root@kali:/home/kali# adminv4*******ss
 root@kali:/home/kali# echo -n mcinventoryv4******\!ss | base64
 root@kali:/home/kali# bWNpb*********************Fzcw==
 ```
+As a result of changing the cookie we got a new page with /admin directory from the user mcinventory. Here we can see the list of presents approved or rejected. The answer of the question 3 is shown in the next image.
+
+![](images/day1_3.png)
+
 
 ### 1. What is the name of the cookie used for authentication?
 
