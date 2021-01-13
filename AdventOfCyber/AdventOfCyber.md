@@ -34,13 +34,24 @@ In order to access you need to navigate to the URL (http://<your-ip-address>:300
   
 ![](images/day1_1.png)
 
-Let's create an account and login, now we can see a cookie of value `dGVzdHY0ZXI5bGwxIXNz`. In the lecture also mention that normally are base64 encoded 
+Let's create an account and login. In this example I have used the user **test** now we can see a cookie of value `dGV*************IXNz` and also the **name** of the cookie, this parameter is required to answer question 1 of Day 1 task. 
+
+![](images/day1_2.png)  
+
+In the lecture also mention that normally cookies are base64 encoded. So, we can try to decode the cookie using the following command. 
 
 ```
-root@kali:/home/kali# echo "dGVzdHY0ZXI5bGwxIXNz" | base64 -d
-root@kali:/home/kali# testv4er9ll1!ss
+root@kali:/home/kali# echo "dGV*************IXNz" | base64 -d
+root@kali:/home/kali# testv4******!ss
 ```
-![](images/day1_2.png)  
+
+After decoding the flag we can notice a pattern looks like the decode cookie has the form <user><fixed-value> so what would happen if we modify the user test to admin resulting in admin<fixed-value>. However remember that we must encode again the decoded value to mimic the previous cookie. Once we have this new value we replaced the previous value of the cookie with the new one. **Note:** The fixed part uses the special character `!` so to avoid issues in bash we need to escape this character with `\` before base64 encoding
+  
+```
+root@kali:/home/kali# adminv4*******ss
+root@kali:/home/kali# echo -n mcinventoryv4******\!ss | base64
+root@kali:/home/kali# bWNpb*********************Fzcw==
+```
 
 ### 1. What is the name of the cookie used for authentication?
 
