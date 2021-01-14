@@ -224,6 +224,66 @@ r*****w
 
 ## Day 4 - Training <a name="day4"></a>
 
+Ingresamos con las credenciales proporcionadas para ssh
+
+```
+[mcsysadmin@ip-10-10-110-7 ~]$ ls
+f****  f****  f****  f****  f****  f****  f****  f****
+```
+
+```
+[mcsysadmin@ip-10-10-110-7 ~]$ cat file5
+r*****s
+```
+
+```
+[mcsysadmin@ip-10-10-110-7 ~]$ grep -iRl 'password'
+file*
+```
+
+### 1. How many visible files are there in the home directory(excluding ./ and ../)?
+
+```
+*                                             //this is a value between 0-9
+```
+
+### 2. What is the content of file5?
+
+```
+r*****s
+```
+
+### 3. Which file contains the string ‘password’?
+
+```
+f****
+```
+
+### 4. What is the IP address in a file in the home folder?
+
+```
+1*.*.*.**
+```
+
+### 5. How many users can log into the machine?
+
+```
+*                             //This is a number between 0-9
+```
+
+### 6. What is the sha1 hash of file8?
+
+```
+fa67ee****************************fd2835
+```
+
+### 7. What is mcsysadmin’s password hash?
+
+```
+$6$jbosYsU/$qOYToX/**************************************************I6cQJLdFlS4gkBMzilDBYcQvu2ro/
+```
+
+
 ## Day 5 - Ho-Ho-Hosint <a name="day5"></a>
 
 ## Day 6 - Data Elf-iltration <a name="day6"></a>
