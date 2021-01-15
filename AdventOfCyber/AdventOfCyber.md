@@ -204,6 +204,8 @@ https://hashcat.net/wiki/doku.php?id=example_hashes   encontramos el patron corr
 $6$3GvJsNPG$ZrSFprHS13divBhlaKg1rYrYLJ7m1xsYRKxlLh0A1sUc/6SUd7UvekBOtSnSyBwk3vCDqBhrgxQpkdsNN6aYP1:r*****w
 ```
 
+
+
 ### 1. Whats the destination IP on packet number 998?
 
 ```
@@ -281,6 +283,44 @@ mcsysadmin:x:1001:1001::/home/mcsysadmin:/bin/bash
 fa67ee594***********************20fd2835  file8
 ```
 
+```
+[mcsysadmin@ip-10-10-184-144 /]$ find / -name *.bak 2>/dev/null
+/etc/nsswitch.conf.bak
+/var/shadow.bak
+```
+
+Here its a shadow.bak file.
+
+```
+[mcsysadmin@ip-10-10-184-144 var]$ cat shadow.bak 
+root:*LOCK*:14600::::::
+bin:*:17919:0:99999:7:::
+daemon:*:17919:0:99999:7:::
+adm:*:17919:0:99999:7:::
+lp:*:17919:0:99999:7:::
+sync:*:17919:0:99999:7:::
+shutdown:*:17919:0:99999:7:::
+halt:*:17919:0:99999:7:::
+mail:*:17919:0:99999:7:::
+operator:*:17919:0:99999:7:::
+games:*:17919:0:99999:7:::
+ftp:*:17919:0:99999:7:::
+nobody:*:17919:0:99999:7:::
+systemd-network:!!:18218::::::
+dbus:!!:18218::::::
+rpc:!!:18218:0:99999:7:::
+libstoragemgmt:!!:18218::::::
+sshd:!!:18218::::::
+rpcuser:!!:18218::::::
+nfsnobody:!!:18218::::::
+ec2-instance-connect:!!:18218::::::
+postfix:!!:18218::::::
+chrony:!!:18218::::::
+tcpdump:!!:18218::::::
+ec2-user:!!:18234:0:99999:7:::
+mcsysadmin:$6$jbosYsU/$qOYToX/**************************************************I6cQJLdFlS4gkBMzilDBYcQvu2ro/:18234:0:99999:7:::
+```
+
 
 
 ### 1. How many visible files are there in the home directory(excluding ./ and ../)?
@@ -327,6 +367,77 @@ $6$jbosYsU/$qOYToX/**************************************************I6cQJLdFlS4
 
 
 ## Day 5 - Ho-Ho-Hosint <a name="day5"></a>
+
+```
+# exiftool thegrinch.jpg 
+ExifTool Version Number         : 12.12
+File Name                       : thegrinch.jpg
+Directory                       : .
+File Size                       : 69 KiB
+File Modification Date/Time     : 2021:01:02 20:27:34-05:00
+File Access Date/Time           : 2021:01:15 17:50:17-05:00
+File Inode Change Date/Time     : 2021:01:15 17:49:44-05:00
+File Permissions                : rw-r--r--
+File Type                       : JPEG
+File Type Extension             : jpg
+MIME Type                       : image/jpeg
+JFIF Version                    : 1.01
+Resolution Unit                 : None
+X Resolution                    : 1
+Y Resolution                    : 1
+XMP Toolkit                     : Image::ExifTool 10.10
+Creator                         : JLolax1
+Image Width                     : 642
+Image Height                    : 429
+Encoding Process                : Progressive DCT, Huffman coding
+Bits Per Sample                 : 8
+Color Components                : 3
+Y Cb Cr Sub Sampling            : YCbCr4:2:0 (2 2)
+Image Size                      : 642x429
+Megapixels                      : 0.275
+```
+
+Here we can see the author JLolax1 that we can try to search in Google...
+
+ww got a twitter account ...
+
+![](images/day5_1.png)
+
+![](images/day5_2.png)
+
+In a tweet says...
+![](images/day5_3.png)
+
+
+### 1. What is Lola's date of birth? Format: Month Date, Year(e.g November 12, 2019)
+
+```
+December 29, 1900
+```
+
+### 2. What is Lola's current occupation?
+
+```
+Santa's Helper
+```
+
+### 3. What phone does Lola make?
+
+```
+iPhone X
+```
+
+### 4. What date did Lola first start her photography? Format: dd/mm/yyyy
+
+```
+23/10/2014
+```
+
+### 5. What famous woman does Lola have on her web page?
+
+```
+ada lovelace
+```
 
 ## Day 6 - Data Elf-iltration <a name="day6"></a>
 
