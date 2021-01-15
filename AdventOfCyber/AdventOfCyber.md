@@ -406,8 +406,14 @@ ww got a twitter account ...
 ![](images/day5_2.png)
 
 In a tweet says...
+
 ![](images/day5_3.png)
 
+![](images/day5_4.png)
+
+![](images/day5_5.png)
+
+![](images/day5_6.png)
 
 ### 1. What is Lola's date of birth? Format: Month Date, Year(e.g November 12, 2019)
 
