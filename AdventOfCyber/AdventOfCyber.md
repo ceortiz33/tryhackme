@@ -31,7 +31,7 @@
 The first challenge is related to web hacking. In this task we will need to modify a cookie in order to access as the user mcinventory that has admin privileges.
 Acording to the [suplemental material](https://docs.google.com/document/d/1PHs7uRS1whLY9tgxH1lj-bnEVWtXPXpo45zWUlbknpU/edit) cookies are generated every time an user perform an action, sent to the server and then checked if the user is authorized to do a certain action.
 
-Attackers can take advantange of cookies when these have not enough randomness. Cookie fixation or predictable cookie values are the main causes of taking control of user accounts. The web application is available on the URL `http://<your-ip-address>:3000`, here you can see a login page that requires an user and password. However when you inspect in the Storage tab there is no cookie, this occurs because there is no user logged in yet. 
+Attackers can take advantange of cookies when these have not enough randomness. Cookie fixation or predictable cookie values are the main causes of taking control of user accounts. The web application is available on the URL `http://<your-ip-address>:3000`, here you can see a login page that requires an user and password. Press **F12** in Firefox and then inspect in the Storage tab and you will see no cookie, this occurs because there is no user logged in yet. 
   
 ![](images/day1_1.png)
 
@@ -79,7 +79,7 @@ fi****ll
 
 ![](images/day2_1.png)
 
-Day 2 of Christmas Challenge is about default credentials and bruteforcing of web directories. In this forum we will use gobuster that is a tool to test web pages and bruteforce  based on the dictionary `directory-list-2.3-medium.txt` Esta herramienta permite hacer fuzzing de directorios mediante un ataque con diccionario, mostrar las coincidencias y muestra el status indicando si son accesibles o no por el usuario final.
+Day 2 of Christmas Challenge is about default credentials and bruteforcing web directories. In this forum we will use gobuster, a tool to test web pages status and bruteforce  based on dictionaries, here we will use dictionary `directory-list-2.3-medium.txt` 
 
 ```
 root@kali:/home/kali# gobuster dir -u http://10.10.83.219:3000/ -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt 
@@ -108,19 +108,19 @@ by OJ Reeves (@TheColonial) & Christian Mehlmauer (@_FireFart_)
 /sys***** (Status: 200)
 ```
 
-Al finalizar de ejecutar la herramienta descubrimos el directorio sys***** que es la respuesta a la primera pregunta de este dia. Una vez que ingresamos aparece una ventana de login de administracion, sin embargo no conocemos las credenciales. Indagando mayor informacion en el codigo fuente de esta pagina encontramos un comentario que parece de utilidad indicando que el sitio ha sido creado basandose en un repositorio en Github
+The directory `/sys*****` is the answer for the first question. Now you need to write this path after the url `http://<your-ip-address>:3000` and as result an admin panel is shown. First step is to try some default users and passowrds like **user**, **root**, **toor** and others, we did not have success login with those credentials, sometimes developers leave some comments inside the source code, so you can try inspecting source code of this page and in the bottom you will see a comment related to a Github page. 
 
 ![](images/day2_2.png)
 
-Realizando la busqueda en Google encontramos que existe el repositorio Artic Digital Design y que ademas tiene credenciales por defecto.
+After searching for this repository in Google, one of the results was **Artic Digital Design** and also detailed some credentials for admin panel.
 
 ![](images/day2_3.png)
 
-Ingresamos con estas credenciales en el panel de administracion y logramos ingresar satisfactoriamente. La contrasena utilizada es la respuesta de la segunda pregunta.
+You can try to access with these credentials and yeah you got access. The forum uses **default credentials** to login. The **password** shown in the Github repository is the **answer to the second question. **
 
 ![](images/day2_4.png)
 
-Si revisamos un poco el contenido de la pagina vemos que mas abajo hay una entrada de un foro que muestra la tercera respuesta del reto del dia de hoy.
+Inside the forum in the bottom page, you can see an entry with the **answer for the third question.**
 
 ### 1. What is the path of the hidden page?
 
