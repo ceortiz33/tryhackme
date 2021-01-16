@@ -28,13 +28,14 @@
 
 ## Day 1 - Inventory Management <a name="day1"></a>
 
-The first challenge is related to Web Hacking. Acording to the suplemental material cookies are generated every time an user perform an action, sent to the server and then checked if the user is authorized to do a certain action. Attackers can take advantange of cookies when these have not enough randomness. Cookie fixation or predictable cookie values are the main causes of taking control of user accounts. 
+The first challenge is related to web hacking. In this task we will need to modify a cookie in order to access as the user mcinventory that has admin privileges.
+Acording to the [suplemental material](https://docs.google.com/document/d/1PHs7uRS1whLY9tgxH1lj-bnEVWtXPXpo45zWUlbknpU/edit) cookies are generated every time an user perform an action, sent to the server and then checked if the user is authorized to do a certain action.
 
-In order to access you need to navigate to the URL (http://<your-ip-address>:3000), here you can see a login page that requires for an user and password. However when you inspect in the Storage tab there is no cookie, this occurs because there is no user logged in yet. 
+Attackers can take advantange of cookies when these have not enough randomness. Cookie fixation or predictable cookie values are the main causes of taking control of user accounts. The web application is available on the URL (http://<your-ip-address>:3000), here you can see a login page that requires an user and password. However when you inspect in the Storage tab there is no cookie, this occurs because there is no user logged in yet. 
   
 ![](images/day1_1.png)
 
-Let's create an account and login. In this example I have used the user **test** now we can see a cookie of value `dGV*************IXNz` and also the **name** of the cookie, this parameter is required to answer question 1 of Day 1 task. 
+Let's create an account and login. In this example I have used the user **test**  and now we can see a cookie value of `dGV*************IXNz` and the **name**. The name is  the parameter required to answer question 1 of Day 1 task. 
 
 ![](images/day1_2.png)  
 
