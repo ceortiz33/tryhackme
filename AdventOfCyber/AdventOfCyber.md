@@ -116,7 +116,7 @@ After searching for this repository in Google, one of the results was **Artic Di
 
 ![](images/day2_3.png)
 
-You can try to access with these credentials and yeah you got access. The forum uses **default credentials** to login. The **password** shown in the Github repository is the **answer to the second question. **
+You can try to access with these credentials and yeah you got access. The forum uses **default credentials** to login. The **password** shown in the Github repository is the **answer to the second question.**
 
 ![](images/day2_4.png)
 
