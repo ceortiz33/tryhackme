@@ -447,6 +447,46 @@ ada lovelace
 
 ## Day 6 - Data Elf-iltration <a name="day6"></a>
 
+```
+# tshark -r holidaythief.pcap -Y "dns"
+```
+Here we can see an extract using tshark and dns filter, we can see that the dns server `43616e64792043616e652053657269616c2
+04e756d6265722038343931.holidaythief.com` is shown repeated times.
+
+```
+    9   1.762003 2604:6000:1103:4192:cc15:cc7f:2cd1:5fff → 2604:6000:1103:4192:6238:e0ff:fed7:8acb DNS 155 Standard query 0xaafe A 43616e64792043616e652053657269616c2
+04e756d6265722038343931.holidaythief.com
+   10   1.762445 2604:6000:1103:4192:cc15:cc7f:2cd1:5fff → 2604:6000:1103:4192:6238:e0ff:fed7:8acb DNS 155 Standard query 0x3b9a AAAA 43616e64792043616e65205365726961
+6c204e756d6265722038343931.holidaythief.com
+   11   1.794783 192.168.1.107 → 1.1.1.1      DNS 135 Standard query 0x3b9a AAAA 43616e64792043616e652053657269616c204e756d6265722038343931.holidaythief.com
+   12   1.794784 192.168.1.107 → 1.1.1.1      DNS 135 Standard query 0xaafe A 43616e64792043616e652053657269616c204e756d6265722038343931.holidaythief.com
+   13   1.828551 2604:6000:1103:4192:6238:e0ff:fed7:8acb → 2604:6000:1103:4192:cc15:cc7f:2cd1:5fff DNS 229 Standard query response 0x3b9a No such name AAAA 43616e6479
+2043616e652053657269616c204e756d6265722038343931.holidaythief.com SOA dns1.registrar-servers.com,
+   14   1.841119 2604:6000:1103:4192:6238:e0ff:fed7:8acb → 2604:6000:1103:4192:cc15:cc7f:2cd1:5fff DNS 229 Standard query response 0xaafe No such name A 43616e6479204
+3616e652053657269616c204e756d6265722038343931.holidaythief.com SOA dns1.registrar-servers.com,
+   15   1.859414 2604:6000:1103:4192:cc15:cc7f:2cd1:5fff → 2604:6000:1103:4192:6238:e0ff:fed7:8acb DNS 90 Standard query 0x52e3 A google.com
+   16   1.859710 192.168.1.107 → 8.8.8.8      DNS 70 Standard query 0xa630 A google.com
+   17   1.863443      1.1.1.1 → 192.168.1.107 DNS 209 Standard query response 0xaafe No such name A 43616e64792043616e652053657269616c204e756d6265722038343931.holiday
+thief.com SOA dns1.registrar-servers.com, 
+   18   1.870208      1.1.1.1 → 192.168.1.107 DNS 209 Standard query response 0x3b9a No such name AAAA 43616e64792043616e652053657269616c204e756d6265722038343931.holi
+daythief.com SOA dns1.registrar-servers.com
+```
+
+The first part is hex encoded, so you can try to decrypt with python3 or any online tool.
+
+```python
+bytes.fromhex('43616e64792043616e652053657269616c204e756d6265722038343931').decode('utf-8')
+'Candy Cane Serial Number 8491'
+```
+
+### 1. What data was exfiltrated via DNS?
+
+```
+Candy Cane Serial Number 8491
+```
+
+
+
 ## Day 7 - Skilling up <a name="day7"></a>
 
 ## Day 8 - SUID Shenanigans <a name="day8"></a>
