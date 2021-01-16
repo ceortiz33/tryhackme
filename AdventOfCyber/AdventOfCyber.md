@@ -79,7 +79,7 @@ fi****ll
 
 ![](images/day2_1.png)
 
-El reto de hoy consiste en analizar un foro en donde aprenderemos algo acerca de bruteforcing directories para encontrar directorios conocidos dentro de un sitio web, para este proposito se utilizara gobuster. Esta herramienta permite hacer fuzzing de directorios mediante un ataque con diccionario, mostrar las coincidencias y muestra el status indicando si son accesibles o no por el usuario final.
+Day 2 of Christmas Challenge is about default credentials and bruteforcing of web directories. In this forum we will use gobuster that is a tool to test web pages and bruteforce  based on the dictionary `directory-list-2.3-medium.txt` Esta herramienta permite hacer fuzzing de directorios mediante un ataque con diccionario, mostrar las coincidencias y muestra el status indicando si son accesibles o no por el usuario final.
 
 ```
 root@kali:/home/kali# gobuster dir -u http://10.10.83.219:3000/ -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt 
