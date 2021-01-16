@@ -31,32 +31,31 @@
 The first challenge is related to web hacking. In this task we will need to modify a cookie in order to access as the user mcinventory that has admin privileges.
 Acording to the [suplemental material](https://docs.google.com/document/d/1PHs7uRS1whLY9tgxH1lj-bnEVWtXPXpo45zWUlbknpU/edit) cookies are generated every time an user perform an action, sent to the server and then checked if the user is authorized to do a certain action.
 
-Attackers can take advantange of cookies when these have not enough randomness. Cookie fixation or predictable cookie values are the main causes of taking control of user accounts. The web application is available on the URL (http://<your-ip-address>:3000), here you can see a login page that requires an user and password. However when you inspect in the Storage tab there is no cookie, this occurs because there is no user logged in yet. 
+Attackers can take advantange of cookies when these have not enough randomness. Cookie fixation or predictable cookie values are the main causes of taking control of user accounts. The web application is available on the URL `http://<your-ip-address>:3000`, here you can see a login page that requires an user and password. However when you inspect in the Storage tab there is no cookie, this occurs because there is no user logged in yet. 
   
 ![](images/day1_1.png)
 
-Let's create an account and login. In this example I have used the user **test**  and now we can see a cookie value of `dGV*************IXNz` and the **name**. The name is  the parameter required to answer question 1 of Day 1 task. 
+Let's create an account and login. In this example I have used the user **test** and now we can see a cookie value of `dGV*************IXNz` also we can see the **name**. The **name** is  the parameter required to **answer question 1** of Day 1 challenge. 
 
 ![](images/day1_2.png)  
 
-In the lecture also mention that normally cookies are base64 encoded. So, we can try to decode the cookie using the following command. 
+In the file provided also says that normally cookies are base64 encoded. So, we can try to decode the cookie using the following command. A part of the decoded value is the **answer for question 2**
 
 ```
 root@kali:/home/kali# echo "dGV*************IXNz" | base64 -d
 root@kali:/home/kali# testv4******!ss
 ```
 
-After decoding the flag we can notice a pattern looks like the decode cookie has the form <user><fixed-value> so what would happen if we modify the user test to admin resulting in admin<fixed-value>. However remember that we must encode again the decoded value to mimic the previous cookie. Once we have this new value we replaced the previous value of the cookie with the new one. **Note:** The fixed part uses the special character `!` so to avoid issues in bash we need to escape this character with `\` before base64 encoding
+After decoding the flag we can notice a pattern looks like the form of `<user><fixed-value>` so let's see what would happen if we modify the user **test** to **mcinventory** that is the user that has admin privileges. As a result mcinventory<fixed-value>. However remember that we must base64 encode again to mimic the previous cookie. Once we have the new value, replace the previous cookie value with the new one. **Note:** The fixed part uses the special character `!` so to avoid issues in bash we need to escape this character with `\` before base64 encoding
   
 ```
 root@kali:/home/kali# adminv4*******ss
 root@kali:/home/kali# echo -n mcinventoryv4******\!ss | base64
 root@kali:/home/kali# bWNpb*********************Fzcw==
 ```
-As a result of changing the cookie we got a new page with /admin directory from the user mcinventory. Here we can see the list of presents approved or rejected. The answer of the question 3 is shown in the next image.
+The result of changing the cookie is a new page with /admin path with the user mcinventory. Here we can see the list of presents approved or rejected. The **answer of the question 3** is shown in the next image.
 
 ![](images/day1_3.png)
-
 
 ### 1. What is the name of the cookie used for authentication?
 
