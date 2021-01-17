@@ -479,13 +479,44 @@ bytes.fromhex('43616e64792043616e652053657269616c204e756d6265722038343931').deco
 'Candy Cane Serial Number 8491'
 ```
 
+finding http files...
+
+```
+# tshark -r holidaythief.pcap -Y "http"
+Running as user "root" and group "root". This could be dangerous.
+   32   6.402494 192.168.1.107 → 192.168.1.105 HTTP 480 GET / HTTP/1.1 
+   35   6.406185 192.168.1.105 → 192.168.1.107 HTTP 472 HTTP/1.0 200 OK  (text/html)
+   45   8.568523 192.168.1.107 → 192.168.1.105 HTTP 533 GET /christmaslists.zip HTTP/1.1 
+   48   8.572200 192.168.1.105 → 192.168.1.107 HTTP 1405 HTTP/1.0 200 OK  (application/zip)
+  103  12.032858 192.168.1.107 → 192.168.1.105 HTTP 528 GET /TryHackMe.jpg HTTP/1.1 
+  130  12.051620 192.168.1.105 → 192.168.1.107 HTTP 1455 HTTP/1.0 200 OK  (JPEG JFIF image)
+```
+We can export these files usign the following command.
+
+```
+# tshark -r holidaythief.pcap --export-object http,/home/kali/Documents/tryhackme/advent_of_cyber1/exported/
+# ls
+%2f  christmaslists.zip  TryHackMe.jpg
+```
+
+```
+# steghide --extract -sf TryHackMe.jpg 
+Enter passphrase: 
+wrote extracted data to "christmasmonster.txt".
+```
+
+
 ### 1. What data was exfiltrated via DNS?
 
 ```
 Candy Cane Serial Number 8491
 ```
 
+### 2. What did Little Timmy want to be for Christmas?
 
+```
+PenTester
+```
 
 ## Day 7 - Skilling up <a name="day7"></a>
 
