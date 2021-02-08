@@ -45,6 +45,14 @@ tshark -r overpass2.pcapng -T fields -e ip.dst | sort | uniq -c
  3890 284.444614924 192.168.170.159 → 192.168.170.145 HTTP 14119 HTTP/1.1 200 OK  (PNG)
 ```
 
+```
+# tshark -r overpass2.pcapng --export-object http,/home/kali/Documents/tryhackme/overpass2/exported/
+# cd exported
+# ls
+
+ %2f  'cooctus(1).png'   cooctus.png   development   index.html  'upload(1).php'   upload.php   uploads
+```
+
 
 
 
