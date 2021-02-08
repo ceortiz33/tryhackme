@@ -31,3 +31,13 @@ when******************
 ```
 https://github.com/*********/ssh-backdoor
 ```
+
+Using the fasttrack wordlist, how many of the system passwords were crackable?
+
+```
+*    A value between 2 and 5
+```
+
+
+
+
