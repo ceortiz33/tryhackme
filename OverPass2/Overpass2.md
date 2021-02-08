@@ -8,6 +8,28 @@
 ## Forensics - Analyze the PCAP
 Para esta seccion se utiliza un archivo PCAP que nos entregan como evidencia de un ataque.
 
+```
+tshark -r overpass2.pcapng -T fields -e ip.dst | sort | uniq -c
+```
+
+```
+   1463 140.82.118.4
+      2 192.168.170.138
+    262 192.168.170.145
+   2113 192.168.170.159
+      2 192.168.170.2
+      1 192.168.170.254
+      3 224.0.0.22
+      4 224.0.0.251
+     14 239.255.255.250
+      1 91.189.91.157
+```
+
+
+
+
+
+
 ### What was the URL of the page they used to upload a reverse shell?
 
 ```
