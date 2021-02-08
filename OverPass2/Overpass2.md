@@ -68,10 +68,11 @@ Content-Disposition: form-data; name="submit"
 Upload File
 -----------------------------1809049028579987031515260006--
 
-
 ```
 
-
+```
+for stream in `tshark -r overpass2.pcapng -Y "ip.addr eq 192.168.170.145 and tcp.port eq 4242" -T fields -e tcp.stream | sort -n -u`; do echo Stream: $stream; tshark -r overpass2.pcapng -q -z follow,tcp,ascii,$stream; done
+```
 
 ### What was the URL of the page they used to upload a reverse shell?
 
