@@ -4,9 +4,28 @@
   <img width="400" height="400" src="https://github.com/ceortiz33/tryhackme/blob/main/OverPass2/images/overpass2.png">
 </p>
 
+## Summary
+
+OverPass2 - Hacked is the second part of Overpass series, this time we play the role of an Incident Responder after receiving a sample of the network traffic recovered from the machine. Now, our mission consists of recover the access of the machine that was compromised by the Cooctus Group.
+
+## Technologies and Techniques
+
+- Network Logs Analysis
+- Tshark
+- Wireshark
+- Research
+- Password Cracking
+
 
 ## Forensics - Analyze the PCAP
+
+Overpass has been hacked! The SOC team (Paradox, congratulations on the promotion) noticed suspicious activity on a late night shift while looking at shibes, and managed to capture packets as the attack happened.
+
+Can you work out how the attacker got in, and hack your way back into Overpass' production server?
 Para esta seccion se utiliza un archivo PCAP que nos entregan como evidencia de un ataque.
+
+
+El primer paso es identificar las IPs mas relevantes, en la siguiente imagen se puede observar que tanto la IP 192.168.170.159  y 140.82.118.4 son las que mas trafico de paquetes tienen.
 
 ```
 tshark -r overpass2.pcapng -T fields -e ip.dst | sort | uniq -c
