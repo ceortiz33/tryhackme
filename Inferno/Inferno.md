@@ -1,1 +1,1 @@
-# Inferno: TryHackMe Walkthough
+# Inferno TryHackMe Walkthough
