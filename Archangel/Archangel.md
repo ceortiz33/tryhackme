@@ -37,6 +37,40 @@ Then try to navigate in the browser with the new hostname and we got the first f
 
 ![](images/first_flag.png)
 
+It's time to look for hidden files or directories within the new hostname. I will use gobuster
 
+```
+gobuster dir -u http://mafialive.thm/ -w /usr/share/wordlists/dirb/common.txt -t 30
+
+[+] Url:            http://mafialive.thm/
+[+] Threads:        30
+[+] Wordlist:       /usr/share/wordlists/dirb/common.txt
+[+] Status codes:   200,204,301,302,307,401,403
+[+] User Agent:     gobuster/3.0.1
+[+] Timeout:        10s
+===============================================================
+2021/03/04 23:23:03 Starting gobuster
+===============================================================
+/.htpasswd (Status: 403)
+/.htaccess (Status: 403)
+/.hta (Status: 403)
+/index.html (Status: 200)
+/robots.txt (Status: 200)
+/server-status (Status: 403)
+
+```
+
+robots.txt exists for this hostname, let's inspect 
+
+![](images/robots.png)
+
+
+![](images/test.png)
+
+Al darle clic al boton vemos que utiliza un parametro GET el cual nos podria servir para probar si existe una vulnerabilidad de LFI(Local File Inclusion)
+
+![](images/get_parameter.png)
+
+Podemos aprovechar que esta ejecutando PHP para correr el siguiente comando que se encuentra en este articulo https://www.idontplaydarts.com/2011/02/using-php-filter-for-local-file-inclusion/
 
 
